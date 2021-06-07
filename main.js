@@ -7,6 +7,7 @@ function createWindow () {
         height: 600
     })
 
+    win.webContents.openDevTools()
     win.loadFile('giphy.html')
 }
 

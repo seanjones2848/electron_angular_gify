@@ -1,6 +1,6 @@
 var apikey = 'dc6zaTOxFJmzC';
 
-function GitController($scope, $http) {
+function GiphyController($scope, $http) {
   $scope.images = {};
   $scope.loading = true;
 
