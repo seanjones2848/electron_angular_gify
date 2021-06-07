@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app>
+
+<head>
+  <link data-require="bootstrap-css@3.1.1" data-semver="3.1.1" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+  <script data-require="angular.js@*" data-semver="1.2.13" src="http://code.angularjs.org/1.2.13/angular.js"></script>
+  <script data-require="jquery@*" data-semver="2.0.3" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+  <script data-require="bootstrap@*" data-semver="3.1.1" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script src="giphy.js"></script>
+</head>
+
+<body ng-controller="GitController">
+  <h1 class="jumbotron shadow">Giphy Search</h1>
+
+  <div class="controller">
+    <input type="search" placeholder="search" class="form-control" ng-model="query" ng-change="updateSearch()">
+    
+    <div class="row">
+      <div class="col-xs-6 col-md-3" ng-repeat="image in images.data | filter: query">
+        <a href="{{ image.url }}" class="thumbnail">
+          <img src="{{ image.images.downsized_medium.url }}" alt="...">
+        </a>
+      </div>
+      {{ image.rating }}
+    </div>
+    
+    
+  </div>
+
+</body>
+
+</html>
